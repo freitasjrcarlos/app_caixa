@@ -1,18 +1,28 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
+import Home from './src/Home';
+import Cadastro from './src/Cadastro';
+import Login from './src/Login';
+import Interna from './src/Interna';
 
-export default class App extends Component{
-  render() {
-    return (
-      <View style={styles.container}>
 
-      </View>
-    );
-  }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+
+const Navegador = createStackNavigator({
+  Home: {
+    screen: Home
+  },
+  Cadastro: {
+    screen: Cadastro
+  },
+  Login: {
+    screen: Login
+  },
+  Interna: {
+    screen: Interna
   }
 });
+
+const AppContainer = createAppContainer(Navegador);
+export default AppContainer;
