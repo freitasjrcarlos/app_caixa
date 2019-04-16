@@ -4,7 +4,8 @@ import { View, Text, StyleSheet } from 'react-native';
 export default class Interna extends Component {
 
   static navigationOptions = {
-    title: "Interna"
+    title: "Interna",
+    header: null
   }
 
   render() {
