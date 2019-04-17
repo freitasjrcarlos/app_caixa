@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, FlatList, Button } from 'react-native';
+import HistoricoItem from './HistoricoItem';
+import firebase from './FirebaseConnection';
 
 export default class Interna extends Component {
 
@@ -17,6 +19,21 @@ export default class Interna extends Component {
 
     this.addReceita = this.addReceita.bind(this);
     this.addDespesa = this.addDespesa.bind(this);
+    this.sair = this.sair.bind(this);
+
+    firebase.auth().onAuthStateChanged((user)=> {
+      if(user){
+
+        firebase.database().ref('users').child(user.uid).on('value', (snapshot)=> {
+          let state = this.state;
+          state.saldo = snapshot.val().saldo;
+          this.setState(state);
+        });
+        
+      }else {
+        this.props.navigation.navigate('Home');
+      }
+    });
   }
 
   addReceita() {
@@ -25,6 +42,10 @@ export default class Interna extends Component {
 
   addDespesa() {
 
+  }
+
+  sair() {
+    firebase.auth().signOut();
   }
 
   render() {
@@ -41,6 +62,7 @@ export default class Interna extends Component {
         <View style={styles.botoesArea}>
           <Button title="+ Receita" onPress={this.addReceita} />
           <Button title="+ Despesa" onPress={this.addDespesa} />
+          <Button title="Sair" onPress={this.sair} />
         </View>
       </View>
     );
