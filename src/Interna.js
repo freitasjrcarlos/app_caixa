@@ -10,9 +10,16 @@ export default class Interna extends Component {
 
   render() {
     return(
-      <View>
+      <View style={styles.container}>
         <Text> ... </Text>
       </View>
     );
   }
 }
+
+//Estilos
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 20,
+  }
+});
