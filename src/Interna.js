@@ -29,6 +29,21 @@ export default class Interna extends Component {
           state.saldo = snapshot.val().saldo;
           this.setState(state);
         });
+
+        firebase.database().ref('historico').child(user.uid).on('value', (snapshot)=>{
+          let state = this.state;
+          state.historico = [];
+
+          snapshot.forEach((childItem)=>{
+            state.historico.push({
+              key: childItem.key,
+              type: childItem.val().type,
+              valor: childItem.val().valor
+            });
+          });
+
+          this.setState(state);
+        });
         
       }else {
         this.props.navigation.navigate('Home');
@@ -57,7 +72,7 @@ export default class Interna extends Component {
         <FlatList
           style={styles.historico}
           data={this.state.historico}
-          renderItem={(item)=> <HistoricoItem data={item} />}
+          renderItem={({item})=> <HistoricoItem data={item} />}
         />
         <View style={styles.botoesArea}>
           <Button title="+ Receita" onPress={this.addReceita} />
