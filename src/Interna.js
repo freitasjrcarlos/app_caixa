@@ -6,7 +6,7 @@ import firebase from './FirebaseConnection';
 export default class Interna extends Component {
 
   static navigationOptions = {
-    title: "Interna",
+    title: "Home",
     header: null
   }
 
@@ -37,7 +37,7 @@ export default class Interna extends Component {
   }
 
   addReceita() {
-
+    this.props.navigation.navigate('AddReceita');
   }
 
   addDespesa() {

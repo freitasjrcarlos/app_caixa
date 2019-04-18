@@ -6,6 +6,7 @@ import Cadastro from './src/Cadastro';
 import Login from './src/Login';
 import Interna from './src/Interna';
 import Preload from './src/Preload';
+import AddReceita from './src/AddReceita';
 
 
 
@@ -25,7 +26,10 @@ const Navegador = createStackNavigator({
   },
   Login: {
     screen: Login
-  }  
+  } ,
+  AddReceita: {
+    screen: AddReceita
+  } 
 });
 
 const AppContainer = createAppContainer(Navegador);
