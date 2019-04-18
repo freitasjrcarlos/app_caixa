@@ -7,6 +7,7 @@ import Login from './src/Login';
 import Interna from './src/Interna';
 import Preload from './src/Preload';
 import AddReceita from './src/AddReceita';
+import AddDespesa from './src/AddDespesa';
 
 
 
@@ -29,6 +30,9 @@ const Navegador = createStackNavigator({
   } ,
   AddReceita: {
     screen: AddReceita
+  },
+  AddDespesa: {
+    screen: AddDespesa
   } 
 });
 
