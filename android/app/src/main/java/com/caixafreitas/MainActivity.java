@@ -1,4 +1,4 @@
-package com.caixa;
+package com.caixafreitas;
 
 import com.facebook.react.ReactActivity;
 
