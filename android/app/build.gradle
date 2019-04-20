@@ -129,12 +129,12 @@ android {
             include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
         }
     }
-    //Add singinConfig
+    //Add signinConfig
     buildTypes {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            singingConfig signingConfigs.release
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release
