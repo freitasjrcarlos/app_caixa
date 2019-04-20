@@ -58,3 +58,4 @@ buck-out/
 # Demais arquivos
 FirebaseConnection.js
 key.keystore
+gradle.properties
