@@ -4,30 +4,30 @@ Um aplicativo simples criado durante meus estudos sobre React-Native. Tentei cri
 
 Usei também Firebase para o cadastro de login do usuário.
 
-**Cloning project**
+**Clonando o repositório**
 ```sh
 cd your-directory
 git clone https://github.com/freitasjrcarlos/app_caixa.git
 ```
 
-**Install npm dependencies**
+**Instalando NPM**
 ```sh
 npm install
 ```
 
 **Adicione seus dados Firebase(selecione a opção para aplicativo Web caso crie um novo) ao arquivo FirebaseConnection.js**
-```sh
+```
 let config = {
   //Seus dados do Firebase aqui
 };
 ```
 
-**Run server - Android**
+**Rodando o servidor - Android**
 ```sh
 react-native run android
 ```
 
-**Run server - IOS**
+**Rodando o servidor - IOS**
 ```sh
 react-native run ios
 ```
